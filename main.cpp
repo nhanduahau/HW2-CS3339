@@ -4,8 +4,11 @@ int main(int argc, char *argv[])
 {
     if (argc != 3)
     {
-        std::cerr << "Error: expected exactly 2 command-line arguments." << std::endl;
-        std::cerr << "Usage: " << argv[0] << " <loop_bound> <increment>" << std::endl;
+        std::cerr << "usage:" << std::endl;
+        std::cerr << "    ./fp_overflow_checker loop_bound loop_counter" << std::endl;
+        std::cerr << std::endl;
+        std::cerr << "    loop_bound is a positive floating-point value" << std::endl;
+        std::cerr << "    loop_counter is a positive floating-point value" << std::endl;
         return 1;
     }
 
@@ -27,10 +30,8 @@ int main(int argc, char *argv[])
     const Float32Bits loopBoundBits(loopBound);
     const Float32Bits incrementBits(increment);
 
-    std::cout << "Loop bound bits:" << std::endl;
-    std::cout << loopBoundBits.formatted() << std::endl;
-    std::cout << "Increment bits:" << std::endl;
-    std::cout << incrementBits.formatted() << std::endl;
+    std::cout << std::left << std::setw(14) << "Loop bound:" << loopBoundBits.spaced() << "\n";
+    std::cout << std::left << std::setw(14) << "Loop counter:" << incrementBits.spaced() << "\n\n";
 
     const int floorLog2Increment = floorLog2FromBits(incrementBits);
     const bool incrementIsPowerOfTwo = isPowerOfTwoFloatBits(incrementBits);
@@ -43,14 +44,14 @@ int main(int argc, char *argv[])
 
     if (!hasFiniteThreshold || loopBound < thresholdValue)
     {
-        std::cout << "No overflow!" << std::endl;
+        std::cout << "There is no overflow!" << std::endl;
         return 0;
     }
 
     std::cout << "Warning: Possible overflow!" << std::endl;
     std::cout << "Overflow threshold:" << std::endl;
-    std::cout << std::scientific << std::setprecision(9) << thresholdValue << std::endl;
-    std::cout << thresholdBits.formatted() << std::endl;
+    std::cout << "\t" << thresholdValue << std::endl;
+    std::cout << "\t" << thresholdBits.spaced() << std::endl;
 
     return 0;
 }
