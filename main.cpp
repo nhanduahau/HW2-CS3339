@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
     const Float32Bits incrementBits(increment);
 
     std::cout << std::left << std::setw(14) << "Loop bound:" << loopBoundBits.spaced() << "\n";
-    std::cout << std::left << std::setw(14) << "Loop counter:" << incrementBits.spaced() << "\n\n";
+    std::cout << std::left << std::setw(14) << "Loop counter:" << incrementBits.spaced() << "\n";
 
     const int floorLog2Increment = floorLog2FromBits(incrementBits);
     const bool incrementIsPowerOfTwo = isPowerOfTwoFloatBits(incrementBits);

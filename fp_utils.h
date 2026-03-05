@@ -12,9 +12,7 @@
 #include <bitset>
 #include <cmath>
 #include <cstdint>
-#include <cstdlib>
 #include <cstring>
-#include <string>
 
 /*
  * Class: Float32Bits
