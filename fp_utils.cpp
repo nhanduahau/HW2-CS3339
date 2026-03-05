@@ -14,11 +14,11 @@ uint32_t Float32Bits::bits() const
     return bits_;
 }
 
-std::string Float32Bits::formatted() const
+std::string Float32Bits::spaced() const
 {
     std::bitset<32> b(bits_);
     const std::string s = b.to_string();
-    return s.substr(0, 1) + " | " + s.substr(1, 8) + " | " + s.substr(9, 23);
+    return s.substr(0, 1) + " " + s.substr(1, 8) + " " + s.substr(9, 23);
 }
 
 int Float32Bits::exponentField() const
