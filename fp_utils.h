@@ -15,7 +15,7 @@ public:
 
     float value() const;
     uint32_t bits() const;
-    std::string formatted() const;
+    std::string spaced() const;
     int exponentField() const;
     uint32_t fractionField() const;
 
