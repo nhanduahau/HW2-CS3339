@@ -1,7 +1,26 @@
+/*
+ * File: main.cpp
+ * Course: CS3339, Spring 2026
+ * Assignment: Homework 2 - Binary Representation, Floating-point Math and Bit Manipulation
+ * Student: Ly Huu Nhan To (Harry)
+ * Description: Driver file for floating-point increment-loss overflow detection.
+ */
+
 #include "main.h"
 
 int main(int argc, char *argv[])
 {
+    /*
+     * Function: main
+     * Purpose: Parse command-line input, print IEEE-754 bit patterns, and report overflow risk.
+     * Parameters:
+     *   argc - number of command-line arguments
+     *   argv - array of command-line argument strings
+     * Returns:
+     *   0 on success, 1 on invalid input/usage
+     * Exceptions:
+     *   none
+     */
     if (argc != 3)
     {
         std::cerr << "usage:" << std::endl;
