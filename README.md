@@ -71,3 +71,7 @@ usage:
     loop_bound is a positive floating-point value
     loop_counter is a positive floating-point value
 ```
+
+## Bugs and Limitations
+
+None known.
